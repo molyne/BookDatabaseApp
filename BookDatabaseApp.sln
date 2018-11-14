@@ -9,7 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookDatabase.Data", "BookDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDatabase.Models", "MovieDatabase.Models\MovieDatabase.Models.csproj", "{5E23B270-D9B1-46DD-AA75-3EA097FFC172}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookDatabase.Client", "BookDatabase.Client\BookDatabase.Client.csproj", "{4D668271-907E-428F-86E2-BF1CBAD00D98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryConsole", "LibraryConsole\LibraryConsole.csproj", "{1456646C-9061-4C48-A8B5-D3B7175ADD5F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{50D64286-7CAB-4C41-AE95-55965BA727CC} = {50D64286-7CAB-4C41-AE95-55965BA727CC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +32,10 @@ Global
 		{5E23B270-D9B1-46DD-AA75-3EA097FFC172}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E23B270-D9B1-46DD-AA75-3EA097FFC172}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E23B270-D9B1-46DD-AA75-3EA097FFC172}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D668271-907E-428F-86E2-BF1CBAD00D98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D668271-907E-428F-86E2-BF1CBAD00D98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D668271-907E-428F-86E2-BF1CBAD00D98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D668271-907E-428F-86E2-BF1CBAD00D98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1456646C-9061-4C48-A8B5-D3B7175ADD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1456646C-9061-4C48-A8B5-D3B7175ADD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1456646C-9061-4C48-A8B5-D3B7175ADD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1456646C-9061-4C48-A8B5-D3B7175ADD5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
