@@ -21,17 +21,29 @@ namespace LibraryConsole.BookDatabaseService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetBooks", ReplyAction="http://tempuri.org/IBookDatabaseService/GetBooksResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<MovieDatabase.Models.Book>> GetBooksAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetAuthors", ReplyAction="http://tempuri.org/IBookDatabaseService/GetAuthorsResponse")]
-        System.Collections.Generic.List<MovieDatabase.Models.Author> GetAuthors();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetAuthors", ReplyAction="http://tempuri.org/IBookDatabaseService/GetAuthorsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<MovieDatabase.Models.Author>> GetAuthorsAsync();
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/AddBook", ReplyAction="http://tempuri.org/IBookDatabaseService/AddBookResponse")]
         void AddBook(MovieDatabase.Models.Book book);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/AddBook", ReplyAction="http://tempuri.org/IBookDatabaseService/AddBookResponse")]
         System.Threading.Tasks.Task AddBookAsync(MovieDatabase.Models.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/DeleteBook", ReplyAction="http://tempuri.org/IBookDatabaseService/DeleteBookResponse")]
+        void DeleteBook(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/DeleteBook", ReplyAction="http://tempuri.org/IBookDatabaseService/DeleteBookResponse")]
+        System.Threading.Tasks.Task DeleteBookAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/EditBook", ReplyAction="http://tempuri.org/IBookDatabaseService/EditBookResponse")]
+        void EditBook(MovieDatabase.Models.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/EditBook", ReplyAction="http://tempuri.org/IBookDatabaseService/EditBookResponse")]
+        System.Threading.Tasks.Task EditBookAsync(MovieDatabase.Models.Book book);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetById", ReplyAction="http://tempuri.org/IBookDatabaseService/GetByIdResponse")]
+        MovieDatabase.Models.Book GetById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetById", ReplyAction="http://tempuri.org/IBookDatabaseService/GetByIdResponse")]
+        System.Threading.Tasks.Task<MovieDatabase.Models.Book> GetByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,20 +81,36 @@ namespace LibraryConsole.BookDatabaseService {
             return base.Channel.GetBooksAsync();
         }
         
-        public System.Collections.Generic.List<MovieDatabase.Models.Author> GetAuthors() {
-            return base.Channel.GetAuthors();
-        }
-        
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<MovieDatabase.Models.Author>> GetAuthorsAsync() {
-            return base.Channel.GetAuthorsAsync();
-        }
-        
         public void AddBook(MovieDatabase.Models.Book book) {
             base.Channel.AddBook(book);
         }
         
         public System.Threading.Tasks.Task AddBookAsync(MovieDatabase.Models.Book book) {
             return base.Channel.AddBookAsync(book);
+        }
+        
+        public void DeleteBook(int id) {
+            base.Channel.DeleteBook(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBookAsync(int id) {
+            return base.Channel.DeleteBookAsync(id);
+        }
+        
+        public void EditBook(MovieDatabase.Models.Book book) {
+            base.Channel.EditBook(book);
+        }
+        
+        public System.Threading.Tasks.Task EditBookAsync(MovieDatabase.Models.Book book) {
+            return base.Channel.EditBookAsync(book);
+        }
+        
+        public MovieDatabase.Models.Book GetById(int id) {
+            return base.Channel.GetById(id);
+        }
+        
+        public System.Threading.Tasks.Task<MovieDatabase.Models.Book> GetByIdAsync(int id) {
+            return base.Channel.GetByIdAsync(id);
         }
     }
 }

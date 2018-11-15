@@ -12,14 +12,10 @@ namespace BookDatabase.Services
     {
         readonly BookDatabaseDbContext _Context = new BookDatabaseDbContext();
 
+        [OperationBehavior(TransactionScopeRequired = true)]
         public List<Book> GetBooks()
         {
             return _Context.Books.ToList();
-        }
-
-        public List<Author> GetAuthors()
-        {
-            return _Context.Authors.ToList();
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
@@ -27,6 +23,34 @@ namespace BookDatabase.Services
         {
             _Context.Books.Add(book);
             _Context.SaveChanges();
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public void DeleteBook(int id)
+        {
+            var book = GetById(id);
+            _Context.Books.Remove(book);
+            _Context.SaveChanges();
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public void EditBook(Book model)
+        {
+            var book = GetById(model.Id);
+
+            if (book == null) throw new Exception("Book doesn't exist in the database");
+
+            book.Title = model.Title;
+            book.Genre = model.Genre;
+            book.Price = model.Price;
+            _Context.SaveChanges();
+        }
+
+        [OperationBehavior(TransactionScopeRequired = true)]
+        public Book GetById(int id)
+        {
+            var book = _Context.Books.Single(x => x.Id == id);
+            return book;
         }
 
         public void Dispose()

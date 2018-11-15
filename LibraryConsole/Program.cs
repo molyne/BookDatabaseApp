@@ -2,8 +2,9 @@
 
 
 using LibraryConsole.BookDatabaseService;
+using MovieDatabase.Models;
 using System;
-using System.Linq;
+using System.Collections.Generic;
 
 namespace LibraryConsole
 {
@@ -11,15 +12,19 @@ namespace LibraryConsole
     {
         static void Main(string[] args)
         {
+            var books = new List<Book>();
             using (BookDatabaseService.BookDatabaseServiceClient proxy = new BookDatabaseServiceClient())
             {
+                books.Clear();
+                books = proxy.GetBooks();
 
-                var books = proxy.GetBooks();
-                Console.WriteLine(books.Select(t => t.Title).First());
+                foreach (var book in books)
+                {
+                    Console.WriteLine($"Title: {book.Title} \nPrice: {book.Price}\nGenre: {book.Genre}");
+
+                }
+
                 Console.ReadKey();
-
-
-
             }
         }
     }

@@ -13,30 +13,50 @@
   <wsdl:message name="IBookDatabaseService_GetBooks_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetBooksResponse" />
   </wsdl:message>
-  <wsdl:message name="IBookDatabaseService_GetAuthors_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuthors" />
-  </wsdl:message>
-  <wsdl:message name="IBookDatabaseService_GetAuthors_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAuthorsResponse" />
-  </wsdl:message>
   <wsdl:message name="IBookDatabaseService_AddBook_InputMessage">
     <wsdl:part name="parameters" element="tns:AddBook" />
   </wsdl:message>
   <wsdl:message name="IBookDatabaseService_AddBook_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddBookResponse" />
   </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_DeleteBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_DeleteBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_EditBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBook" />
+  </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_EditBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_GetById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetById" />
+  </wsdl:message>
+  <wsdl:message name="IBookDatabaseService_GetById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IBookDatabaseService">
     <wsdl:operation name="GetBooks">
       <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/GetBooks" message="tns:IBookDatabaseService_GetBooks_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/GetBooksResponse" message="tns:IBookDatabaseService_GetBooks_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetAuthors">
-      <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/GetAuthors" message="tns:IBookDatabaseService_GetAuthors_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/GetAuthorsResponse" message="tns:IBookDatabaseService_GetAuthors_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="AddBook">
       <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/AddBook" message="tns:IBookDatabaseService_AddBook_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/AddBookResponse" message="tns:IBookDatabaseService_AddBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/DeleteBook" message="tns:IBookDatabaseService_DeleteBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/DeleteBookResponse" message="tns:IBookDatabaseService_DeleteBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/EditBook" message="tns:IBookDatabaseService_EditBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/EditBookResponse" message="tns:IBookDatabaseService_EditBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBookDatabaseService/GetById" message="tns:IBookDatabaseService_GetById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBookDatabaseService/GetByIdResponse" message="tns:IBookDatabaseService_GetById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IBookDatabaseService" type="tns:IBookDatabaseService">
@@ -50,8 +70,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetAuthors">
-      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/GetAuthors" style="document" />
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/AddBook" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -59,8 +79,26 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddBook">
-      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/AddBook" style="document" />
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBook">
+      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/EditBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetById">
+      <soap:operation soapAction="http://tempuri.org/IBookDatabaseService/GetById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

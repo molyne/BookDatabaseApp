@@ -11,9 +11,15 @@ namespace BookDatabase.Services
         List<Book> GetBooks();
 
         [OperationContract]
-        List<Author> GetAuthors();
+        void AddBook(Book book);
 
         [OperationContract]
-        void AddBook(Book book);
+        void DeleteBook(int id);
+
+        [OperationContract]
+        void EditBook(Book book);
+
+        [OperationContract]
+        Book GetById(int id);
     }
 }
