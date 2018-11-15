@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryConsole.ServiceReference1 {
+namespace LibraryConsole.BookDatabaseService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IBookDatabaseService")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="BookDatabaseService.IBookDatabaseService")]
     public interface IBookDatabaseService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IBookDatabaseService/GetBooks", ReplyAction="http://tempuri.org/IBookDatabaseService/GetBooksResponse")]
@@ -35,12 +35,12 @@ namespace LibraryConsole.ServiceReference1 {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBookDatabaseServiceChannel : LibraryConsole.ServiceReference1.IBookDatabaseService, System.ServiceModel.IClientChannel {
+    public interface IBookDatabaseServiceChannel : LibraryConsole.BookDatabaseService.IBookDatabaseService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BookDatabaseServiceClient : System.ServiceModel.ClientBase<LibraryConsole.ServiceReference1.IBookDatabaseService>, LibraryConsole.ServiceReference1.IBookDatabaseService {
+    public partial class BookDatabaseServiceClient : System.ServiceModel.ClientBase<LibraryConsole.BookDatabaseService.IBookDatabaseService>, LibraryConsole.BookDatabaseService.IBookDatabaseService {
         
         public BookDatabaseServiceClient() {
         }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1456646C-9061-4C48-A8B5-D3B7175ADD5F}</ProjectGuid>
+    <ProjectGuid>{E8CEB4C1-0E89-4E4D-B75F-AABF3A004309}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LibraryConsole</RootNamespace>
-    <AssemblyName>LibraryConsole</AssemblyName>
+    <RootNamespace>BookDatabase.Host</RootNamespace>
+    <AssemblyName>BookDatabase.Host</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -44,55 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\BookDatabaseService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Connected Services\BookDatabaseService\BookDatabaseService.wsdl" />
-    <None Include="Connected Services\BookDatabaseService\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BookDatabaseService\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\BookDatabaseService\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Properties\DataSources\MovieDatabase.Models.Author.datasource" />
-    <None Include="Properties\DataSources\MovieDatabase.Models.Book.datasource" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MovieDatabase.Models\MovieDatabase.Models.csproj">
-      <Project>{5e23b270-d9b1-46dd-aa75-3ea097ffc172}</Project>
-      <Name>MovieDatabase.Models</Name>
+    <ProjectReference Include="..\BookDatabase.Services\BookDatabase.Services.csproj">
+      <Project>{50d64286-7cab-4c41-ae95-55965ba727cc}</Project>
+      <Name>BookDatabase.Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\BookDatabaseService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\BookDatabaseService\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\BookDatabaseService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\BookDatabaseService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\BookDatabaseService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
